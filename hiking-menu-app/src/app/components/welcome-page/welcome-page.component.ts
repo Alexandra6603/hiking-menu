@@ -10,11 +10,12 @@ export class WelcomePageComponent implements OnInit {
 
   constructor() { }
 
+  public authFormVisible: boolean = false;
+
   ngOnInit(): void {
   }
 
-  public openAuthorizationForm() {
-    
+  public hideAuthoForm() {
+    this.authFormVisible = false
   }
-
 }
