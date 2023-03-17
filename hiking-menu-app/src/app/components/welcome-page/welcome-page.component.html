@@ -1,0 +1,43 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="card-container">
+    <p-card>
+        <h4>Что умеет это приложение?</h4>
+
+        <ul>
+            <li>Формировать корзину продуктов для твоего похода</li>
+            <li>Помогать постоить сбалансированное меню для любого количества человек</li>
+            <li>Учитывать индивидуальные особенности</li>
+        </ul>
+
+        <ng-template pTemplate="footer">
+            <button pButton label="Пробуем"></button>
+        </ng-template>
+    </p-card>
+
+    <p-card>
+        <h4>Что ты можешь сделать в этом приложении?</h4>
+
+        <ul>
+            <li>Добавлять свои блюда</li>
+            <li>что-то еще</li>
+            <li>это же тест, просто смотрим</li>
+            <li>интересно, а так сработает?</li>
+            <li>кек, нет</li>
+        </ul>
+
+        <ng-template pTemplate="footer">
+            <button pButton label="Пробуем" (click)="authFormVisible=true"></button>
+        </ng-template>
+    </p-card>
+</div>
+
+<p-dialog
+    [visible]="authFormVisible"
+    [baseZIndex]="10000"
+    [modal]="true"
+    appendTo="body"
+    [blockScroll]="true"
+    (onHide)="hideAuthoForm()">
+    <app-authorization-form></app-authorization-form>
+</p-dialog>

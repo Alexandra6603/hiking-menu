@@ -1,0 +1,15 @@
+.card-container {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+p-card {
+    width: 40%;
+    height: 20rem;
+}
+
+p-card-header {
+    margin-top: .2rem;
+}
