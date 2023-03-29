@@ -1,4 +1,4 @@
-<app-nav-bar></app-nav-bar>
+<app-nav-bar (authFormVisibleChange)="authFormVisibleChange($event)"></app-nav-bar>
 
 <div class="card-container">
     <p-card>
@@ -11,7 +11,7 @@
         </ul>
 
         <ng-template pTemplate="footer">
-            <button pButton label="Пробуем"></button>
+            <button pButton label="Пробуем" (click)="authFormVisibleChange({state: true})"></button>
         </ng-template>
     </p-card>
 
@@ -33,11 +33,18 @@
 </div>
 
 <p-dialog
+    *ngIf="authFormVisible"
     [visible]="authFormVisible"
     [baseZIndex]="10000"
     [modal]="true"
     appendTo="body"
     [blockScroll]="true"
-    (onHide)="hideAuthoForm()">
-    <app-authorization-form></app-authorization-form>
+    (visibleChange)="authFormVisible=false"
+    [style]="{width: '50vw'}"
+    >
+    <ng-template pTemplate="header">
+        <h3>Авторизация</h3>
+    </ng-template>
+
+    <app-authorization-form (close)="authFormVisibleChange($event)"></app-authorization-form>
 </p-dialog>

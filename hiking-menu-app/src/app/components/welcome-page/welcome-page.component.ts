@@ -15,7 +15,7 @@ export class WelcomePageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public hideAuthoForm() {
-    this.authFormVisible = false
+  public authFormVisibleChange(event: {state: boolean}) {
+    this.authFormVisible = event.state;
   }
 }
