@@ -13,3 +13,16 @@ p-card {
 p-card-header {
     margin-top: .2rem;
 }
+
+.not-user {
+    font-size: small;
+    // display: flex;
+    // justify-self: end;
+    position: absolute;
+    right: 5%;
+    bottom: 2%;
+}
+
+.not-user:hover {
+    text-decoration: underline;
+}

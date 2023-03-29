@@ -1,1 +1,27 @@
-<p>authorization-form works!</p>
+<form [formGroup]="authForm">
+    <div class="p-grid p-fluid p-fluid-fields">
+
+        <div class="p-col-12 input-form">
+            <span class="p-float-label">
+                <input id="float-input" type="text" pInputText formControlName="email" required> 
+                <label for="float-input">Электронная почта</label>
+            </span>
+        </div>
+
+        <div class="p-col-12 input-form">
+            <span class="p-float-label p-input-icon-right">
+                <!-- <i class="pi pi-spin pi-eye"></i> -->
+                <!-- <p-password formControlName="password" [toggleMask]="true" [feedback]="false" id="password"></p-password> -->
+                <input type="password" pInputText formControlName="password" id="password"/>
+                <label for="password">Пароль</label>
+            </span>
+        </div>
+
+    </div>
+</form>
+
+<div class="footer">
+    <button pButton label="Войти" (click)="login()" type="submit"></button>
+
+    <p class="not-user">У меня еще нет аккаунта</p>
+</div>
